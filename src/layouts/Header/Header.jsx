@@ -21,7 +21,7 @@ function Header() {
         {user ? (
           <button onClick={auth.logout} className="btn btn-primary">Déconnexion</button>
         ) : (
-          <button onClick={handleLoginClick} className="btn btn-primary">Connexion</button>
+          <Link to="/loginout-page" className="header__nav-link">Connexion</Link>
         )}
       </nav>
     </header>
