@@ -1,0 +1,63 @@
+@import "../../index.css";
+
+.footer {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  background-color: #1E1E1E;
+  color: #FFD700;
+  box-shadow: 0 1rem 1rem rgba(11, 61, 11, 0.5);
+  background-image: url('/path/to/superhero-background.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .footer-content {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    p {
+      margin: 0;
+    }
+
+    nav {
+      ul {
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        gap: 1rem;
+        padding: 0;
+        margin: 0;
+
+        li {
+          a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            justify-content: flex-end;
+            transition: transform 0.3s ease, filter 0.3s ease;
+
+            &:hover {
+              transform: scale(1.2);
+              filter: brightness(1.5);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    text-align: center;
+
+    .footer-content {
+      flex-direction: column;
+    }
+  }
+}
