@@ -1,27 +1,13 @@
-import { Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import LoginOutPage from './pages/Login';
-import NotFoundPage from './pages/NotFoundPage';
-import Contact from './pages/ContactPage';
-import PrivateRoute from './auth/PrivateRoute';
-import SuperHeroDetails from './components/SuperHeroDetails/SuperHeroDetails';
+import Router from "./routes/Router";
+import "./App.css";
+import { AuthProvider } from "./auth/AuthProvider";
 
-export default function Router() {
+export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path='/loginout' element={<LoginOutPage />} />
-      <Route path='/contact' element={
-        <PrivateRoute>
-          <Contact />
-        </PrivateRoute>
-      } />
-      <Route path='/hero/:id' element={
-        <PrivateRoute>
-          <SuperHeroDetails />
-        </PrivateRoute>
-      } />
-      <Route path="*" element={<NotFound />} />
-    </Routes>
+    <>
+      <AuthProvider>
+          <Router />
+      </AuthProvider>
+    </>
   );
 }
